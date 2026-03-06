@@ -1,0 +1,1814 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maison Lombard — Expertise & Achat d'Objets de Valeur</title>
+  <meta name="description"
+    content="Maison Lombard — Spécialiste en expertise et achat d'objets de valeur. Intervention à domicile partout en France. Estimation confidentielle et gratuite.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+  <style>
+    /* ═══════════════════════════════════════════
+       DESIGN TOKENS
+    ═══════════════════════════════════════════ */
+    :root {
+      /* Colors */
+      --black: #0A0A0A;
+      --black-light: #111111;
+      --black-card: #161616;
+      --black-border: #222222;
+      --gold: #C9A96E;
+      --gold-light: #D4B97A;
+      --gold-dark: #A8893E;
+      --gold-glow: rgba(201, 169, 110, 0.15);
+      --gold-glow-strong: rgba(201, 169, 110, 0.35);
+      --white: #FDFBF7;
+      --white-dim: #E4DCD0;
+      /* Lighter for better contrast */
+      --white-muted: #A39B8E;
+      /* Lighter for footer readability */
+
+      /* Typography */
+      --font-heading: 'Cormorant Garamond', 'Georgia', serif;
+      --font-body: 'Inter', 'Helvetica Neue', sans-serif;
+
+      /* Spacing */
+      --section-pad: clamp(80px, 10vw, 140px);
+      --container: min(1200px, 90vw);
+
+      /* Transitions */
+      --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* ═══════════════════════════════════════════
+       RESET & BASE
+    ═══════════════════════════════════════════ */
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body,
+    .m-lombard-wrapper {
+      font-family: var(--font-body) !important;
+      font-size: clamp(16px, 1.2vw, 18px) !important;
+      background: var(--black) !important;
+      color: var(--white) !important;
+      line-height: 1.7 !important;
+      font-weight: 400 !important;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased !important;
+    }
+
+    /* ═══════════════════════════════════════════
+       SHOPIFY OVERRIDES (FORCE STYLES)
+    ═══════════════════════════════════════════ */
+    .m-lombard-wrapper h1,
+    .m-lombard-wrapper h2,
+    .m-lombard-wrapper h3,
+    .m-lombard-wrapper h4,
+    .m-lombard-wrapper h5,
+    .m-lombard-wrapper h6 {
+      font-family: var(--font-heading) !important;
+      color: var(--white) !important;
+      margin: 0 !important;
+      line-height: 1.2 !important;
+      text-transform: none !important;
+      letter-spacing: normal !important;
+    }
+
+    .m-lombard-wrapper p,
+    .m-lombard-wrapper span,
+    .m-lombard-wrapper div,
+    .m-lombard-wrapper a {
+      font-family: var(--font-body) !important;
+    }
+
+    .m-lombard-wrapper p {
+      margin-bottom: 0 !important;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      border: none;
+      background: none;
+      cursor: pointer;
+      font-family: inherit;
+    }
+
+    .container {
+      width: var(--container);
+      margin: 0 auto;
+    }
+
+    /* ═══════════════════════════════════════════
+       UTILITY CLASSES
+    ═══════════════════════════════════════════ */
+    .section-label {
+      font-family: var(--font-body);
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .section-label::before {
+      content: '';
+      display: inline-block;
+      width: 30px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .section-title {
+      font-family: var(--font-heading) !important;
+      font-size: clamp(2.2rem, 4vw, 3.4rem) !important;
+      font-weight: 400 !important;
+      line-height: 1.15 !important;
+      color: var(--white) !important;
+      margin-bottom: 1.5rem !important;
+    }
+
+    .section-subtitle {
+      font-family: var(--font-body) !important;
+      font-size: 1rem !important;
+      color: var(--white-dim) !important;
+      max-width: 560px;
+      line-height: 1.8 !important;
+      margin-bottom: 0 !important;
+    }
+
+    .gold-line {
+      width: 50px;
+      height: 1px;
+      background: linear-gradient(90deg, var(--gold), transparent);
+      margin: 2rem 0;
+    }
+
+    /* ═══════════════════════════════════════════
+       BUTTONS
+    ═══════════════════════════════════════════ */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 32px;
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      border-radius: 0;
+      transition: all 0.4s var(--ease-out);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      color: var(--black);
+    }
+
+    .btn-gold:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(201, 169, 110, 0.3);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border: 1px solid var(--black-border);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+      transform: translateY(-2px);
+    }
+
+    .btn-arrow::after {
+      content: '→';
+      transition: transform 0.3s var(--ease-out);
+    }
+
+    .btn-arrow:hover::after {
+      transform: translateX(4px);
+    }
+
+    /* ═══════════════════════════════════════════
+       NAVIGATION
+    ═══════════════════════════════════════════ */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      padding: 0 clamp(20px, 4vw, 60px);
+      transition: all 0.5s var(--ease-out);
+    }
+
+    .nav.scrolled {
+      background: rgba(10, 10, 10, 0.92);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(201, 169, 110, 0.08);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 80px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      z-index: 1001;
+    }
+
+    .nav-logo img {
+      height: 60px;
+      width: auto;
+      object-fit: contain;
+      mix-blend-mode: lighten;
+      transform-origin: left center;
+      transition: transform 0.3s ease;
+    }
+
+    .nav-logo:hover img {
+      transform: scale(1.05);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: clamp(20px, 3vw, 40px);
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--white-dim);
+      transition: color 0.3s ease;
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--gold);
+      transition: width 0.3s var(--ease-out);
+    }
+
+    .nav-links a:hover {
+      color: var(--gold);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      padding: 10px 24px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      transition: all 0.4s var(--ease-out);
+    }
+
+    .nav-cta:hover {
+      background: var(--gold);
+      color: var(--black);
+    }
+
+    /* Mobile menu toggle */
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      z-index: 1001;
+      padding: 4px;
+    }
+
+    .nav-toggle span {
+      width: 24px;
+      height: 1.5px;
+      background: var(--white);
+      transition: all 0.3s ease;
+      transform-origin: center;
+    }
+
+    .nav-toggle.active span:nth-child(1) {
+      transform: rotate(45deg) translate(4px, 5px);
+    }
+
+    .nav-toggle.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .nav-toggle.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(4px, -5px);
+    }
+
+    /* Mobile menu overlay — hidden by default */
+    .nav-mobile {
+      display: none;
+    }
+
+    /* ═══════════════════════════════════════════
+       HERO SECTION
+    ═══════════════════════════════════════════ */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: var(--black);
+    }
+
+    /* Animated gradient background */
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+
+    .hero-bg::before {
+      content: '';
+      position: absolute;
+      top: -20%;
+      right: -10%;
+      width: 70%;
+      height: 70%;
+      background: radial-gradient(ellipse, rgba(201, 169, 110, 0.08) 0%, transparent 60%);
+      animation: heroGlow 8s ease-in-out infinite alternate;
+    }
+
+    .hero-bg::after {
+      content: '';
+      position: absolute;
+      bottom: -15%;
+      left: -10%;
+      width: 50%;
+      height: 60%;
+      background: radial-gradient(ellipse, rgba(201, 169, 110, 0.05) 0%, transparent 55%);
+      animation: heroGlow2 10s ease-in-out infinite alternate;
+    }
+
+    @keyframes heroGlow {
+      0% {
+        transform: translate(0, 0) scale(1);
+        opacity: 0.6;
+      }
+
+      100% {
+        transform: translate(-30px, 20px) scale(1.1);
+        opacity: 1;
+      }
+    }
+
+    @keyframes heroGlow2 {
+      0% {
+        transform: translate(0, 0) scale(1);
+        opacity: 0.4;
+      }
+
+      100% {
+        transform: translate(20px, -15px) scale(1.15);
+        opacity: 0.8;
+      }
+    }
+
+    /* Grid overlay */
+    .hero-grid {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      opacity: 0.03;
+      background-image:
+        linear-gradient(var(--gold) 1px, transparent 1px),
+        linear-gradient(90deg, var(--gold) 1px, transparent 1px);
+      background-size: 80px 80px;
+    }
+
+    /* Floating dots decoration */
+    .hero-dots {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      overflow: hidden;
+    }
+
+    .hero-dot {
+      position: absolute;
+      border-radius: 50%;
+      background: var(--gold);
+    }
+
+    .hero-dot.d1 {
+      width: 4px;
+      height: 4px;
+      top: 20%;
+      left: 15%;
+      opacity: 0.3;
+      animation: floatDot 6s ease-in-out infinite;
+    }
+
+    .hero-dot.d2 {
+      width: 6px;
+      height: 6px;
+      top: 35%;
+      right: 20%;
+      opacity: 0.2;
+      animation: floatDot 8s ease-in-out infinite reverse;
+    }
+
+    .hero-dot.d3 {
+      width: 3px;
+      height: 3px;
+      bottom: 30%;
+      left: 25%;
+      opacity: 0.25;
+      animation: floatDot 7s ease-in-out infinite 1s;
+    }
+
+    .hero-dot.d4 {
+      width: 5px;
+      height: 5px;
+      top: 60%;
+      right: 12%;
+      opacity: 0.15;
+      animation: floatDot 9s ease-in-out infinite 2s;
+    }
+
+    /* Decorative circle ring */
+    .hero-ring {
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      border: 1px solid rgba(201, 169, 110, 0.06);
+      border-radius: 50%;
+      top: 10%;
+      right: 8%;
+      z-index: 1;
+      animation: ringRotate 30s linear infinite;
+    }
+
+    .hero-ring::before {
+      content: '';
+      position: absolute;
+      top: -3px;
+      left: 50%;
+      width: 6px;
+      height: 6px;
+      background: var(--gold);
+      border-radius: 50%;
+      opacity: 0.4;
+    }
+
+    @keyframes floatDot {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-20px);
+      }
+    }
+
+    @keyframes ringRotate {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    /* Horizontal decorative lines */
+    .hero-line {
+      position: absolute;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(201, 169, 110, 0.1), transparent);
+      z-index: 1;
+    }
+
+    .hero-line.l1 {
+      top: 30%;
+      left: 0;
+      width: 30%;
+    }
+
+    .hero-line.l2 {
+      bottom: 25%;
+      right: 0;
+      width: 25%;
+    }
+
+    /* Hero content */
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      max-width: 900px;
+      padding: 0 20px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 20px;
+      border: 1px solid rgba(201, 169, 110, 0.2);
+      border-radius: 30px;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 3rem;
+      background: rgba(201, 169, 110, 0.04);
+      backdrop-filter: blur(10px);
+      transform: translateY(30px);
+      opacity: 0;
+      animation: fadeInUp 1s var(--ease-out) 0.2s forwards;
+    }
+
+    .hero-badge::before {
+      content: '◆';
+      font-size: 0.5rem;
+    }
+
+    .hero-title {
+      font-family: var(--font-heading) !important;
+      font-size: clamp(3rem, 7vw, 5.5rem) !important;
+      font-weight: 300 !important;
+      line-height: 1.05 !important;
+      color: var(--white) !important;
+      margin-bottom: 1.5rem !important;
+      transform: translateY(40px);
+      opacity: 0;
+      animation: fadeInUp 1s var(--ease-out) 0.4s forwards;
+    }
+
+    .hero-title em {
+      font-style: italic !important;
+      color: var(--gold) !important;
+    }
+
+    .hero-subtitle {
+      font-family: var(--font-body) !important;
+      font-size: clamp(1.05rem, 1.6vw, 1.25rem) !important;
+      font-weight: 400 !important;
+      color: var(--white-dim) !important;
+      max-width: 600px;
+      margin: 0 auto 2.5rem !important;
+      line-height: 1.8 !important;
+      transform: translateY(30px);
+      opacity: 0;
+      animation: fadeInUp 1s var(--ease-out) 0.6s forwards;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+      transform: translateY(30px);
+      opacity: 0;
+      animation: fadeInUp 1s var(--ease-out) 0.8s forwards;
+    }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      opacity: 0;
+      animation: fadeInUp 1s var(--ease-out) 1.2s forwards;
+    }
+
+    .hero-scroll span {
+      font-size: 0.65rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--white-muted);
+    }
+
+    .hero-scroll-line {
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, var(--gold), transparent);
+      animation: scrollPulse 2s ease-in-out infinite;
+    }
+
+    @keyframes scrollPulse {
+
+      0%,
+      100% {
+        opacity: 0.3;
+        transform: scaleY(0.6);
+      }
+
+      50% {
+        opacity: 1;
+        transform: scaleY(1);
+      }
+    }
+
+    @keyframes fadeInUp {
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    /* ═══════════════════════════════════════════
+       HISTOIRE (ABOUT) SECTION
+    ═══════════════════════════════════════════ */
+    .histoire {
+      padding: var(--section-pad) 0;
+      position: relative;
+    }
+
+    .histoire-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(40px, 6vw, 100px);
+      align-items: center;
+    }
+
+    .histoire-image {
+      position: relative;
+      aspect-ratio: 4/5;
+      overflow: hidden;
+    }
+
+    .histoire-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: sepia(0.1) brightness(0.9);
+      transition: transform 0.8s var(--ease-out);
+    }
+
+    .histoire-image:hover img {
+      transform: scale(1.03);
+    }
+
+    .histoire-image::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border: 1px solid rgba(201, 169, 110, 0.15);
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    /* Gold corner accents */
+    .histoire-image::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      right: -10px;
+      width: 100px;
+      height: 100px;
+      border-right: 1px solid var(--gold);
+      border-bottom: 1px solid var(--gold);
+      opacity: 0.3;
+      z-index: 1;
+    }
+
+    .histoire-content {
+      padding: 20px 0;
+    }
+
+    .histoire-text {
+      font-size: 1.05rem;
+      font-weight: 400;
+      color: var(--white-dim);
+      line-height: 1.9;
+      margin-bottom: 2rem;
+    }
+
+    .histoire-founder {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding-top: 2rem;
+      border-top: 1px solid var(--black-border);
+    }
+
+    .histoire-founder-avatar {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-heading);
+      font-size: 1.2rem;
+      font-style: italic;
+      color: var(--black);
+      flex-shrink: 0;
+    }
+
+    .histoire-founder-info {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .histoire-founder-name {
+      font-family: var(--font-heading);
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: var(--white);
+    }
+
+    .histoire-founder-role {
+      font-size: 0.85rem;
+      color: var(--white-muted);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    /* ═══════════════════════════════════════════
+       MÉTIER (SERVICES) SECTION
+    ═══════════════════════════════════════════ */
+    .metier {
+      padding: var(--section-pad) 0;
+      background: var(--black-light);
+      position: relative;
+    }
+
+    .metier::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold-glow), transparent);
+    }
+
+    .metier-header {
+      text-align: center;
+      margin-bottom: clamp(50px, 6vw, 80px);
+    }
+
+    .metier-header .section-label {
+      justify-content: center;
+    }
+
+    .metier-header .section-subtitle {
+      margin: 0 auto;
+    }
+
+    .metier-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .metier-card {
+      background: var(--black-card);
+      border: 1px solid var(--black-border);
+      padding: clamp(32px, 3vw, 48px);
+      position: relative;
+      overflow: hidden;
+      transition: all 0.5s var(--ease-out);
+    }
+
+    .metier-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .metier-card:hover {
+      border-color: rgba(201, 169, 110, 0.15);
+      transform: translateY(-4px);
+    }
+
+    .metier-card:hover::before {
+      opacity: 1;
+    }
+
+    .metier-card-icon {
+      width: 52px;
+      height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+      border: 1px solid rgba(201, 169, 110, 0.2);
+      color: var(--gold);
+      font-size: 1.3rem;
+    }
+
+    .metier-card h3 {
+      font-family: var(--font-heading);
+      font-size: 1.4rem;
+      font-weight: 500;
+      margin-bottom: 1rem;
+      color: var(--white);
+    }
+
+    .metier-card p {
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--white-dim);
+      line-height: 1.7;
+    }
+
+    /* ═══════════════════════════════════════════
+       EXPERTISE (NOUS ACHETONS) SECTION
+    ═══════════════════════════════════════════ */
+    .expertise {
+      padding: var(--section-pad) 0;
+      position: relative;
+    }
+
+    .expertise-header {
+      text-align: center;
+      margin-bottom: clamp(50px, 6vw, 80px);
+    }
+
+    .expertise-header .section-label {
+      justify-content: center;
+    }
+
+    .expertise-header .section-subtitle {
+      margin: 0 auto;
+    }
+
+    .expertise-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .expertise-item {
+      position: relative;
+      aspect-ratio: 16/10;
+      /* Changed to landscape rectangle */
+      overflow: hidden;
+      cursor: pointer;
+      background: var(--black-card);
+      border: 1px solid var(--black-border);
+    }
+
+    .expertise-item-bg {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, var(--black-card), var(--black));
+      transition: all 0.5s var(--ease-out);
+    }
+
+    .expertise-item:hover .expertise-item-bg {
+      background: linear-gradient(135deg, rgba(201, 169, 110, 0.08), var(--black));
+    }
+
+    .expertise-item-content {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: clamp(16px, 2vw, 24px);
+    }
+
+    .expertise-item-icon {
+      font-size: 2.5rem;
+      margin-bottom: auto;
+      padding-top: 20px;
+      opacity: 0.6;
+      transition: all 0.5s var(--ease-out);
+    }
+
+    .expertise-item:hover .expertise-item-icon {
+      opacity: 1;
+      transform: scale(1.1);
+    }
+
+    .expertise-item-name {
+      font-family: var(--font-heading);
+      font-size: clamp(1.3rem, 2vw, 1.6rem);
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 0.3rem;
+    }
+
+    .expertise-item-line {
+      width: 30px;
+      height: 1px;
+      background: var(--gold);
+      margin-top: 12px;
+      transition: width 0.4s var(--ease-out);
+    }
+
+    .expertise-item:hover .expertise-item-line {
+      width: 60px;
+    }
+
+    /* ═══════════════════════════════════════════
+       AVIS (REVIEWS / LIVRE D'OR) SECTION
+    ═══════════════════════════════════════════ */
+    .avis {
+      padding: var(--section-pad) 0;
+      background: var(--black-light);
+      position: relative;
+    }
+
+    .avis::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold-glow), transparent);
+    }
+
+    .avis-header {
+      text-align: center;
+      margin-bottom: clamp(50px, 6vw, 80px);
+    }
+
+    .avis-header .section-label {
+      justify-content: center;
+    }
+
+    .avis-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .avis-card {
+      background: var(--black-card);
+      border: 1px solid var(--black-border);
+      padding: clamp(28px, 3vw, 40px);
+      transition: all 0.4s var(--ease-out);
+      position: relative;
+    }
+
+    .avis-card:hover {
+      border-color: rgba(201, 169, 110, 0.12);
+      transform: translateY(-2px);
+    }
+
+    .avis-card-stars {
+      color: var(--gold);
+      font-size: 0.9rem;
+      letter-spacing: 3px;
+      margin-bottom: 1.2rem;
+    }
+
+    .avis-card-text {
+      font-size: 1.05rem;
+      font-weight: 400;
+      color: var(--white-dim);
+      line-height: 1.8;
+      font-style: normal;
+      margin-bottom: 1.5rem;
+    }
+
+    .avis-card-text::before {
+      content: '"';
+      font-family: var(--font-heading);
+      font-size: 3.5rem;
+      color: var(--gold);
+      opacity: 0.4;
+      line-height: 0.5;
+      display: block;
+      margin-bottom: 16px;
+    }
+
+    .avis-card-author {
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--white-muted);
+    }
+
+    /* ═══════════════════════════════════════════
+       CTA / CONTACT SECTION
+    ═══════════════════════════════════════════ */
+    .cta-section {
+      padding: var(--section-pad) 0;
+      text-align: center;
+      position: relative;
+    }
+
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(201, 169, 110, 0.05) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .cta-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+    }
+
+    .cta-content .section-label {
+      justify-content: center;
+    }
+
+    .cta-content .section-title {
+      max-width: 700px;
+      margin: 0 auto 1.5rem !important;
+      text-align: center !important;
+    }
+
+    .cta-content .section-subtitle {
+      margin: 0 auto 2.5rem;
+      text-align: center;
+    }
+
+    .cta-info {
+      display: flex;
+      justify-content: center;
+      gap: 48px;
+      margin-top: 3rem;
+    }
+
+    .cta-info-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .cta-info-label {
+      font-size: 0.7rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--white-muted);
+    }
+
+    .cta-info-value {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      color: var(--gold);
+    }
+
+    .cta-info-value a {
+      color: var(--gold);
+      transition: color 0.3s ease;
+    }
+
+    .cta-info-value a:hover {
+      color: var(--gold-light);
+    }
+
+    /* ═══════════════════════════════════════════
+       FOOTER
+    ═══════════════════════════════════════════ */
+    .footer {
+      padding: 50px 0 30px;
+      border-top: 1px solid var(--black-border);
+    }
+
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+
+    .footer-brand {
+      max-width: 300px;
+    }
+
+    .footer-brand-name {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      font-weight: 500;
+      margin-bottom: 0.8rem;
+      color: var(--white);
+    }
+
+    .footer-brand-desc {
+      font-size: 0.95rem;
+      font-weight: 400;
+      color: var(--white-muted);
+      line-height: 1.7;
+    }
+
+    .footer-links-group h4 {
+      font-family: var(--font-heading);
+      font-size: 1rem;
+      font-weight: 500;
+      margin-bottom: 1rem;
+      color: var(--white);
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-links a {
+      font-size: 0.95rem;
+      font-weight: 400;
+      color: var(--white-muted);
+      transition: color 0.3s ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--gold);
+    }
+
+    .footer-bottom {
+      padding-top: 30px;
+      border-top: 1px solid var(--black-border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .footer-copy {
+      font-size: 0.85rem;
+      font-weight: 400;
+      color: var(--white-muted);
+    }
+
+    .footer-shopify {
+      font-size: 0.7rem;
+      color: var(--white-muted);
+      opacity: 0.5;
+    }
+
+    /* ═══════════════════════════════════════════
+       SCROLL REVEAL ANIMATIONS
+    ═══════════════════════════════════════════ */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.9s var(--ease-out);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-delay-1 {
+      transition-delay: 0.1s;
+    }
+
+    .reveal-delay-2 {
+      transition-delay: 0.2s;
+    }
+
+    .reveal-delay-3 {
+      transition-delay: 0.3s;
+    }
+
+    .reveal-delay-4 {
+      transition-delay: 0.4s;
+    }
+
+    .reveal-delay-5 {
+      transition-delay: 0.5s;
+    }
+
+    .reveal-delay-6 {
+      transition-delay: 0.6s;
+    }
+
+    /* ═══════════════════════════════════════════
+       RESPONSIVE
+    ═══════════════════════════════════════════ */
+    @media (max-width: 1024px) {
+      .nav-links {
+        display: none;
+      }
+
+      .nav-cta.desktop-only {
+        display: none;
+      }
+
+      .nav-toggle {
+        display: flex;
+      }
+
+      /* Mobile menu overlay */
+      .nav-mobile {
+        display: block;
+        position: fixed;
+        inset: 0;
+        background: rgba(10, 10, 10, 0.98);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        z-index: 999;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 32px;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.4s ease;
+      }
+
+      .nav-mobile.open {
+        display: flex;
+        opacity: 1;
+        pointer-events: all;
+      }
+
+      .nav-mobile a {
+        font-family: var(--font-heading);
+        font-size: 1.8rem;
+        font-weight: 400;
+        color: var(--white-dim);
+        transition: color 0.3s ease;
+      }
+
+      .nav-mobile a:hover {
+        color: var(--gold);
+      }
+
+      .nav-mobile .nav-cta {
+        margin-top: 16px;
+        padding: 14px 32px;
+        font-size: 0.8rem;
+      }
+
+      .metier-cards {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .expertise-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .avis-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .histoire-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .histoire-image {
+        max-height: 400px;
+      }
+
+      .hero-ring {
+        display: none;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .expertise-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+
+      .expertise-item {
+        aspect-ratio: 1/1.1;
+      }
+
+      .hero-title {
+        font-size: 2.4rem;
+      }
+
+      .hero-subtitle {
+        font-size: 0.9rem;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .cta-info {
+        flex-direction: column;
+        gap: 24px;
+      }
+
+      .footer-top {
+        flex-direction: column;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="m-lombard-wrapper">
+
+    <!-- ════════════════════════════════════════
+       NAVIGATION
+  ════════════════════════════════════════ -->
+    <nav class="nav" id="nav">
+      <div class="nav-inner">
+        <a href="/" class="nav-logo">
+          <img src="https://cdn.shopify.com/s/files/1/0899/6126/7466/files/logo.jpg?v=1772636772" alt="Maison Lombard">
+        </a>
+        <ul class="nav-links">
+          <li><a href="#histoire">Qui sommes-nous</a></li>
+          <li><a href="#metier">Notre métier</a></li>
+          <li><a href="#expertise">Nous achetons</a></li>
+          <li><a href="#avis">Livre d'or</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <a href="#contact" class="nav-cta desktop-only">Prendre contact</a>
+        <button class="nav-toggle" id="navToggle" aria-label="Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile overlay menu -->
+    <div class="nav-mobile" id="navMobile">
+      <a href="#histoire" onclick="closeMenu()">Qui sommes-nous</a>
+      <a href="#metier" onclick="closeMenu()">Notre métier</a>
+      <a href="#expertise" onclick="closeMenu()">Nous achetons</a>
+      <a href="#avis" onclick="closeMenu()">Livre d'or</a>
+      <a href="#contact" onclick="closeMenu()">Contact</a>
+      <a href="#contact" class="nav-cta" onclick="closeMenu()">Prendre contact</a>
+    </div>
+
+    <!-- ════════════════════════════════════════
+       HERO
+  ════════════════════════════════════════ -->
+    <section class="hero" id="hero">
+      <div class="hero-bg"></div>
+      <div class="hero-grid"></div>
+      <div class="hero-dots">
+        <div class="hero-dot d1"></div>
+        <div class="hero-dot d2"></div>
+        <div class="hero-dot d3"></div>
+        <div class="hero-dot d4"></div>
+      </div>
+      <div class="hero-ring"></div>
+      <div class="hero-line l1"></div>
+      <div class="hero-line l2"></div>
+
+      <div class="hero-content">
+        <div class="hero-badge">Expertise à domicile · Partout en France</div>
+        <h1 class="hero-title">
+          Vos objets ont une<br><em>histoire</em>
+        </h1>
+        <p class="hero-subtitle">
+          Spécialisés dans l'expertise et l'achat d'objets de valeur, nous estimons
+          et acquérons vos biens en toute confidentialité, directement chez vous.
+        </p>
+        <div class="hero-buttons">
+          <a href="#contact" class="btn btn-gold btn-arrow">Estimation Gratuite</a>
+          <a href="#metier" class="btn btn-outline btn-arrow">Découvrir</a>
+        </div>
+      </div>
+
+      <div class="hero-scroll">
+        <span>Scroll</span>
+        <div class="hero-scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════
+       NOTRE HISTOIRE
+  ════════════════════════════════════════ -->
+    <section class="histoire" id="histoire">
+      <div class="container">
+        <div class="histoire-grid">
+          <div class="histoire-image reveal">
+            <img src="https://cdn.shopify.com/s/files/1/0899/6126/7466/files/histoire_luxueuse.png?v=1772636772"
+              alt="Intérieur classique avec objets anciens de luxe (montre à gousset, loupe, livre)" loading="lazy">
+          </div>
+          <div class="histoire-content">
+            <div class="section-label reveal">Notre Histoire</div>
+            <h2 class="section-title reveal reveal-delay-1">
+              L'art de redonner vie aux <em>trésors oubliés</em>
+            </h2>
+            <p class="histoire-text reveal reveal-delay-2">
+              Passionné depuis toujours par l'histoire des objets et leur valeur intemporelle,
+              Lucien Lombard fonde <strong>Maison Lombard</strong> en 2023, avec une vision claire :
+              redonner ses lettres de noblesse au métier d'antiquaire.
+            </p>
+            <p class="histoire-text reveal reveal-delay-3">
+              Autodidacte rigoureux, il commence seul, en sillonnant les campagnes françaises
+              à la recherche de pièces oubliées. Très vite, sa réputation d'expertise, d'honnêteté
+              et de raffinement lui vaut la confiance de nombreuses familles, collectionneurs et professionnels.
+            </p>
+            <div class="histoire-founder reveal reveal-delay-4">
+              <div class="histoire-founder-avatar">LL</div>
+              <div class="histoire-founder-info">
+                <span class="histoire-founder-name">Lucien Lombard</span>
+                <span class="histoire-founder-role">Fondateur</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════
+       NOTRE MÉTIER
+  ════════════════════════════════════════ -->
+    <section class="metier" id="metier">
+      <div class="container">
+        <div class="metier-header">
+          <div class="section-label reveal">Notre Métier</div>
+          <h2 class="section-title reveal reveal-delay-1">L'Excellence dans l'Expertise</h2>
+          <p class="section-subtitle reveal reveal-delay-2">
+            Notre approche rigoureuse et notre sens du détail nous permettent d'offrir
+            un accompagnement personnalisé et des estimations justes et confidentielles.
+          </p>
+        </div>
+
+        <div class="metier-cards">
+          <div class="metier-card reveal">
+            <div class="metier-card-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+            </div>
+            <h3>Expertise & Évaluation</h3>
+            <p>Notre équipe d'experts qualifiés évalue avec précision vos objets de valeur,
+              garantissant une estimation juste et transparente.</p>
+          </div>
+
+          <div class="metier-card reveal reveal-delay-1">
+            <div class="metier-card-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+                <line x1="1" y1="10" x2="23" y2="10"></line>
+              </svg>
+            </div>
+            <h3>Achat Direct</h3>
+            <p>Nous proposons un service d'achat immédiat pour vos objets précieux,
+              avec un paiement sécurisé et instantané.</p>
+          </div>
+
+          <div class="metier-card reveal reveal-delay-2">
+            <div class="metier-card-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+              </svg>
+            </div>
+            <h3>Intervention à Domicile</h3>
+            <p>Nous intervenons directement chez vous, partout en France,
+              pour expertiser et acquérir vos biens en toute simplicité.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════
+       NOS DOMAINES D'EXPERTISE
+  ════════════════════════════════════════ -->
+    <section class="expertise" id="expertise">
+      <div class="container">
+        <div class="expertise-header">
+          <div class="section-label reveal">Nous Achetons</div>
+          <h2 class="section-title reveal reveal-delay-1">Nos Domaines d'Expertise</h2>
+          <p class="section-subtitle reveal reveal-delay-2">
+            De l'horlogerie fine aux œuvres d'art, nous estimons et acquérons
+            vos objets de valeur dans six domaines d'excellence.
+          </p>
+        </div>
+
+        <div class="expertise-grid">
+          <div class="expertise-item reveal">
+            <div class="expertise-item-bg"></div>
+            <div class="expertise-item-content">
+              <div class="expertise-item-icon">⌚</div>
+              <span class="expertise-item-name">Horlogerie</span>
+              <div class="expertise-item-line"></div>
+            </div>
+          </div>
+
+          <div class="expertise-item reveal reveal-delay-1">
+            <div class="expertise-item-bg"></div>
+            <div class="expertise-item-content">
+              <div class="expertise-item-icon">👜</div>
+              <span class="expertise-item-name">Fourrure & Maroquinerie</span>
+              <div class="expertise-item-line"></div>
+            </div>
+          </div>
+
+          <div class="expertise-item reveal reveal-delay-2">
+            <div class="expertise-item-bg"></div>
+            <div class="expertise-item-content">
+              <div class="expertise-item-icon">🍽️</div>
+              <span class="expertise-item-name">Argenterie</span>
+              <div class="expertise-item-line"></div>
+            </div>
+          </div>
+
+          <div class="expertise-item reveal reveal-delay-3">
+            <div class="expertise-item-bg"></div>
+            <div class="expertise-item-content">
+              <div class="expertise-item-icon">🎨</div>
+              <span class="expertise-item-name">Œuvres d'art</span>
+              <div class="expertise-item-line"></div>
+            </div>
+          </div>
+
+          <div class="expertise-item reveal reveal-delay-4">
+            <div class="expertise-item-bg"></div>
+            <div class="expertise-item-content">
+              <div class="expertise-item-icon">🏛️</div>
+              <span class="expertise-item-name">Décoration & Mobilier</span>
+              <div class="expertise-item-line"></div>
+            </div>
+          </div>
+
+          <div class="expertise-item reveal reveal-delay-5">
+            <div class="expertise-item-bg"></div>
+            <div class="expertise-item-content">
+              <div class="expertise-item-icon">🪙</div>
+              <span class="expertise-item-name">Pièces de monnaie</span>
+              <div class="expertise-item-line"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════
+       LIVRE D'OR (AVIS)
+  ════════════════════════════════════════ -->
+    <section class="avis" id="avis">
+      <div class="container">
+        <div class="avis-header">
+          <div class="section-label reveal">Livre d'Or</div>
+          <h2 class="section-title reveal reveal-delay-1">Ce que nos clients disent de nous</h2>
+        </div>
+
+        <div class="avis-grid">
+          <div class="avis-card reveal">
+            <div class="avis-card-stars">★★★★★</div>
+            <p class="avis-card-text">
+              Équipe au top ! J'avais hérité de quelques objets anciens dont je ne savais pas quoi faire.
+              Ils sont venus voir sur place, ont pris le temps de tout regarder, et m'ont bien expliqué
+              la valeur de chaque pièce. La vente s'est faite dans la foulée. Très satisfaite !
+            </p>
+            <span class="avis-card-author">— Client vérifié</span>
+          </div>
+
+          <div class="avis-card reveal reveal-delay-1">
+            <div class="avis-card-stars">★★★★★</div>
+            <p class="avis-card-text">
+              Un grand merci à Maison Lombard pour leur sérieux. J'ai contacté l'équipe pour vider
+              une partie de la maison de ma grand-mère. L'évaluation a été faite avec beaucoup de
+              respect et de professionnalisme. Je recommande vivement.
+            </p>
+            <span class="avis-card-author">— Client vérifié</span>
+          </div>
+
+          <div class="avis-card reveal reveal-delay-2">
+            <div class="avis-card-stars">★★★★★</div>
+            <p class="avis-card-text">
+              Service très agréable. Prise de rendez-vous rapide, équipe ponctuelle et sympathique.
+              J'avais quelques bibelots anciens dans une armoire et ils ont su me conseiller sur ce
+              qui avait de la valeur. On sent l'expérience derrière. Rien à redire.
+            </p>
+            <span class="avis-card-author">— Client vérifié</span>
+          </div>
+
+          <div class="avis-card reveal reveal-delay-3">
+            <div class="avis-card-stars">★★★★★</div>
+            <p class="avis-card-text">
+              Merci à toute l'équipe, surtout à Monsieur Bourge qui a été très clair et rassurant.
+              C'était la première fois que je faisais ce genre de vente, et tout s'est bien passé.
+              Je referai appel à eux sans hésiter si besoin !
+            </p>
+            <span class="avis-card-author">— Client vérifié</span>
+          </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 48px;" class="reveal">
+          <a href="/pages/livre-dor" class="btn btn-outline btn-arrow">Voir tous les avis</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════
+       CTA / CONTACT
+  ════════════════════════════════════════ -->
+    <section class="cta-section" id="contact">
+      <div class="container">
+        <div class="cta-content">
+          <div class="section-label reveal">Contact</div>
+          <h2 class="section-title reveal reveal-delay-1">
+            Vous avez des objets à faire <em>estimer ?</em>
+          </h2>
+          <p class="section-subtitle reveal reveal-delay-2">
+            Contactez-nous pour une estimation gratuite et confidentielle.
+            Nous intervenons à domicile, partout en France.
+          </p>
+          <div class="reveal reveal-delay-3">
+            <a href="tel:+33695530238" class="btn btn-gold btn-arrow">Nous appeler</a>
+          </div>
+
+          <div class="cta-info reveal reveal-delay-4">
+            <div class="cta-info-item">
+              <span class="cta-info-label">Email</span>
+              <span class="cta-info-value">
+                <a href="mailto:contact@maison-lombard.com">contact@maison-lombard.com</a>
+              </span>
+            </div>
+            <div class="cta-info-item">
+              <span class="cta-info-label">Téléphone</span>
+              <span class="cta-info-value">
+                <a href="tel:+33695530238">06 95 53 02 38</a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════
+       FOOTER
+  ════════════════════════════════════════ -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <div class="footer-brand-name">Maison Lombard</div>
+            <p class="footer-brand-desc">
+              Spécialiste en expertise et achat d'objets de valeur.
+              Intervention à domicile partout en France.
+            </p>
+          </div>
+
+          <div class="footer-links-group">
+            <h4>Navigation</h4>
+            <ul class="footer-links">
+              <li><a href="#histoire">Qui sommes-nous</a></li>
+              <li><a href="#metier">Notre métier</a></li>
+              <li><a href="#expertise">Nous achetons</a></li>
+              <li><a href="#avis">Livre d'or</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-links-group">
+            <h4>Contact</h4>
+            <ul class="footer-links">
+              <li><a href="mailto:contact@maison-lombard.com">contact@maison-lombard.com</a></li>
+              <li><a href="tel:+33695530238">06 95 53 02 38</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <span class="footer-copy">© 2025 Maison Lombard. Tous droits réservés.</span>
+          <span class="footer-shopify">Commerce propulsé par Shopify</span>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ════════════════════════════════════════
+       SCRIPTS
+  ════════════════════════════════════════ -->
+    <script>
+      /* ── Navigation scroll effect ── */
+      const nav = document.getElementById('nav');
+      window.addEventListener('scroll', () => {
+        nav.classList.toggle('scrolled', window.scrollY > 60);
+      }, { passive: true });
+
+      /* ── Mobile menu ── */
+      const navToggle = document.getElementById('navToggle');
+      const navMobile = document.getElementById('navMobile');
+
+      navToggle.addEventListener('click', () => {
+        navToggle.classList.toggle('active');
+        navMobile.classList.toggle('open');
+        document.body.style.overflow = navMobile.classList.contains('open') ? 'hidden' : '';
+      });
+
+      function closeMenu() {
+        navToggle.classList.remove('active');
+        navMobile.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+
+      /* ── Scroll reveal ── */
+      const revealEls = document.querySelectorAll('.reveal');
+      const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+      revealEls.forEach(el => revealObserver.observe(el));
+
+      /* ── Smooth scroll for anchor links ── */
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        });
+      });
+    </script>
+
+</body>
+
+</html>
