@@ -1400,6 +1400,125 @@
         text-align: center;
       }
     }
+
+    /* ═══════════════════════════════════════════
+       CONTACT FORM
+    ═══════════════════════════════════════════ */
+    .cta-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 64px;
+      align-items: start;
+      margin-top: 48px;
+    }
+
+    .cta-left {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .form-label {
+      font-family: var(--font-body);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--white-muted);
+    }
+
+    .form-input,
+    .form-textarea {
+      background: var(--black-card);
+      border: 1px solid var(--black-border);
+      color: var(--white);
+      font-family: var(--font-body);
+      font-size: 15px;
+      padding: 14px 16px;
+      border-radius: 2px;
+      outline: none;
+      transition: border-color 0.25s ease, box-shadow 0.25s ease;
+      width: 100%;
+      -webkit-appearance: none;
+    }
+
+    .form-input::placeholder,
+    .form-textarea::placeholder {
+      color: var(--white-muted);
+      opacity: 0.5;
+    }
+
+    .form-input:focus,
+    .form-textarea:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px var(--gold-glow);
+    }
+
+    .form-textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .form-submit {
+      width: 100%;
+      margin-top: 4px;
+      justify-content: center;
+    }
+
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 28px 24px;
+      background: var(--black-card);
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      font-family: var(--font-heading);
+      font-size: 22px;
+      border-radius: 2px;
+    }
+
+    .form-success p {
+      font-family: var(--font-body);
+      font-size: 14px;
+      color: var(--white-muted);
+      margin-top: 8px;
+    }
+
+    .form-error-msg {
+      display: none;
+      font-size: 13px;
+      color: #e57373;
+      margin-top: 4px;
+    }
+
+    @media (max-width: 768px) {
+      .cta-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 
   <!-- JSON-LD Structured Data -->
@@ -1748,22 +1867,75 @@
             Contactez-nous pour une estimation gratuite et confidentielle.
             Nous intervenons à domicile, partout en France.
           </p>
-          <div class="reveal reveal-delay-3">
-            <a href="tel:+33695530238" class="btn btn-gold btn-arrow">Nous appeler</a>
+        </div>
+
+        <div class="cta-grid reveal">
+          <!-- Colonne gauche : infos contact -->
+          <div class="cta-left">
+            <div class="reveal reveal-delay-1">
+              <a href="tel:+33695530238" class="btn btn-gold btn-arrow">Nous appeler</a>
+            </div>
+            <div class="cta-info reveal reveal-delay-2">
+              <div class="cta-info-item">
+                <span class="cta-info-label">Email</span>
+                <span class="cta-info-value">
+                  <a href="mailto:contact@maison-lombard.com">contact@maison-lombard.com</a>
+                </span>
+              </div>
+              <div class="cta-info-item">
+                <span class="cta-info-label">Téléphone</span>
+                <span class="cta-info-value">
+                  <a href="tel:+33695530238">06 95 53 02 38</a>
+                </span>
+              </div>
+              <div class="cta-info-item">
+                <span class="cta-info-label">Disponibilité</span>
+                <span class="cta-info-value">Lun – Sam, 9h – 19h</span>
+              </div>
+              <div class="cta-info-item">
+                <span class="cta-info-label">Zone</span>
+                <span class="cta-info-value">Partout en France</span>
+              </div>
+            </div>
           </div>
 
-          <div class="cta-info reveal reveal-delay-4">
-            <div class="cta-info-item">
-              <span class="cta-info-label">Email</span>
-              <span class="cta-info-value">
-                <a href="mailto:contact@maison-lombard.com">contact@maison-lombard.com</a>
-              </span>
-            </div>
-            <div class="cta-info-item">
-              <span class="cta-info-label">Téléphone</span>
-              <span class="cta-info-value">
-                <a href="tel:+33695530238">06 95 53 02 38</a>
-              </span>
+          <!-- Colonne droite : formulaire -->
+          <div class="reveal reveal-delay-2">
+            <form id="contactForm" class="contact-form" novalidate>
+              <!-- Honeypot anti-spam -->
+              <input type="text" name="_honey" style="display:none">
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="field-nom">Prénom &amp; Nom *</label>
+                  <input class="form-input" type="text" id="field-nom" name="nom" placeholder="Jean Dupont" required autocomplete="name">
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="field-tel">Téléphone</label>
+                  <input class="form-input" type="tel" id="field-tel" name="telephone" placeholder="06 12 34 56 78" autocomplete="tel">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="field-email">Email *</label>
+                <input class="form-input" type="email" id="field-email" name="email" placeholder="jean@example.com" required autocomplete="email">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="field-objets">Description des objets *</label>
+                <textarea class="form-textarea" id="field-objets" name="objets" placeholder="Ex : tableau ancien, service en argent, montre de gousset, bibelots de succession…" required></textarea>
+              </div>
+
+              <div class="form-error-msg" id="formError">Une erreur est survenue. Veuillez réessayer ou nous appeler directement.</div>
+
+              <button type="submit" class="btn btn-gold btn-arrow form-submit" id="formBtn">
+                Envoyer ma demande
+              </button>
+            </form>
+
+            <div class="form-success" id="formSuccess">
+              Demande envoyée
+              <p>Nous vous répondrons sous 24h. À très bientôt.</p>
             </div>
           </div>
         </div>
@@ -1859,6 +2031,47 @@
           }
         });
       });
+
+      // ── Contact form ──────────────────────────────────────────────────
+      const form = document.getElementById('contactForm');
+      const btn = document.getElementById('formBtn');
+      const success = document.getElementById('formSuccess');
+      const errorMsg = document.getElementById('formError');
+
+      if (form) {
+        form.addEventListener('submit', async (e) => {
+          e.preventDefault();
+          if (!form.checkValidity()) { form.reportValidity(); return; }
+
+          btn.disabled = true;
+          btn.textContent = 'Envoi en cours…';
+          errorMsg.style.display = 'none';
+
+          const data = new FormData(form);
+          data.append('_subject', 'Nouvelle demande d\'estimation — Maison Lombard');
+          data.append('_template', 'table');
+          data.append('_captcha', 'false');
+
+          try {
+            const res = await fetch('https://formsubmit.co/ajax/contact@maison-lombard.com', {
+              method: 'POST',
+              headers: { 'Accept': 'application/json' },
+              body: data,
+            });
+            const json = await res.json();
+            if (json.success === 'true' || json.success === true) {
+              form.style.display = 'none';
+              success.style.display = 'block';
+            } else {
+              throw new Error('fail');
+            }
+          } catch (_) {
+            errorMsg.style.display = 'block';
+            btn.disabled = false;
+            btn.textContent = 'Envoyer ma demande';
+          }
+        });
+      }
     </script>
 
 </body>
