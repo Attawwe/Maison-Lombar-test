@@ -12,25 +12,26 @@
     gtag('config', 'G-62ZG7KVY6X');
   </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Maison Lombard — Expertise & Achat d'Objets de Valeur</title>
+  <title>Maison Lombard — Expert Antiquités &amp; Achat Succession | Seine-et-Marne, Yonne, Côte-d'Or</title>
   <meta name="description"
-    content="Maison Lombard — Spécialiste en expertise et achat d'objets de valeur. Intervention à domicile partout en France. Estimation confidentielle et gratuite.">
+    content="Maison Lombard, expert en achat d'antiquités et objets de succession. Intervention à domicile en Seine-et-Marne (77), Yonne (89) et Côte-d'Or (21). Estimation gratuite et confidentielle.">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://maison-lombard.vercel.app/">
+  <meta name="keywords" content="expert antiquités Seine-et-Marne, achat succession 77, estimation objets anciens Yonne, expert antiquités Côte-d'Or, achat antiquités 89 21, expertise mobilier succession domicile">
+  <link rel="canonical" href="https://maison-lombard.com/">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://maison-lombard.vercel.app/">
-  <meta property="og:title" content="Maison Lombard — Expertise & Achat d'Objets de Valeur">
-  <meta property="og:description" content="Spécialiste en expertise et achat d'objets de valeur. Intervention à domicile partout en France. Estimation confidentielle et gratuite.">
+  <meta property="og:url" content="https://maison-lombard.com/">
+  <meta property="og:title" content="Maison Lombard — Expert Antiquités &amp; Achat Succession | 77, 89, 21">
+  <meta property="og:description" content="Expert en achat d'antiquités et objets de succession. Intervention à domicile en Seine-et-Marne, Yonne et Côte-d'Or. Estimation gratuite.">
   <meta property="og:image" content="https://cdn.shopify.com/s/files/1/0899/6126/7466/files/histoire_luxueuse.png?v=1772636772">
   <meta property="og:locale" content="fr_FR">
   <meta property="og:site_name" content="Maison Lombard">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Maison Lombard — Expertise & Achat d'Objets de Valeur">
-  <meta name="twitter:description" content="Spécialiste en expertise et achat d'objets de valeur. Intervention à domicile partout en France. Estimation confidentielle et gratuite.">
+  <meta name="twitter:title" content="Maison Lombard — Expert Antiquités &amp; Achat Succession | 77, 89, 21">
+  <meta name="twitter:description" content="Expert en achat d'antiquités et objets de succession. Intervention à domicile en Seine-et-Marne, Yonne et Côte-d'Or. Estimation gratuite.">
   <meta name="twitter:image" content="https://cdn.shopify.com/s/files/1/0899/6126/7466/files/histoire_luxueuse.png?v=1772636772">
 
   <!-- Favicon -->
@@ -1527,37 +1528,218 @@
         grid-template-columns: 1fr;
       }
     }
+
+    /* ── FAQ Section ───────────────────────────── */
+    .faq-section {
+      padding: 120px 0;
+      background: var(--black);
+    }
+    .faq-header {
+      text-align: center;
+      margin-bottom: 64px;
+    }
+    .faq-grid {
+      max-width: 800px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .faq-item {
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .faq-item:first-child {
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .faq-question {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding: 24px 0;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--white);
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      font-weight: 500;
+      text-align: left;
+      transition: color 0.2s ease;
+    }
+    .faq-question:hover {
+      color: var(--gold);
+    }
+    .faq-icon {
+      flex-shrink: 0;
+      font-size: 1.4rem;
+      font-weight: 300;
+      color: var(--gold);
+      transition: transform 0.3s ease;
+      line-height: 1;
+    }
+    .faq-item.open .faq-icon {
+      transform: rotate(45deg);
+    }
+    .faq-answer {
+      display: none;
+      padding-bottom: 24px;
+    }
+    .faq-item.open .faq-answer {
+      display: block;
+    }
+    .faq-answer p {
+      color: var(--gray);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin: 0;
+    }
+    @media (max-width: 768px) {
+      .faq-section { padding: 80px 0; }
+      .faq-question { font-size: 1rem; padding: 20px 0; }
+    }
   </style>
 
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Maison Lombard",
-    "description": "Spécialiste en expertise et achat d'objets de valeur. Intervention à domicile partout en France.",
-    "url": "https://maison-lombard.vercel.app/",
-    "telephone": "+33695530238",
-    "email": "contact@maison-lombard.com",
-    "logo": "https://cdn.shopify.com/s/files/1/0899/6126/7466/files/logo.jpg?v=1772636772",
-    "image": "https://cdn.shopify.com/s/files/1/0899/6126/7466/files/histoire_luxueuse.png?v=1772636772",
-    "areaServed": {
-      "@type": "Country",
-      "name": "France"
-    },
-    "serviceType": ["Expertise d'objets de valeur", "Achat d'antiquités", "Estimation à domicile"],
-    "founder": {
-      "@type": "Person",
-      "name": "Lucien Lombard"
-    },
-    "foundingDate": "2023",
-    "priceRange": "€€",
-    "openingHoursSpecification": {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
-      "opens": "09:00",
-      "closes": "18:00"
-    }
+    "@graph": [
+      {
+        "@type": ["LocalBusiness", "ProfessionalService"],
+        "@id": "https://maison-lombard.com/#business",
+        "name": "Maison Lombard",
+        "description": "Expert en achat d'antiquités et objets de succession. Intervention à domicile en Seine-et-Marne (77), Yonne (89) et Côte-d'Or (21). Estimation gratuite et confidentielle.",
+        "url": "https://maison-lombard.com/",
+        "telephone": "+33695530238",
+        "email": "contact@maison-lombard.com",
+        "logo": "https://cdn.shopify.com/s/files/1/0899/6126/7466/files/logo.jpg?v=1772636772",
+        "image": "https://cdn.shopify.com/s/files/1/0899/6126/7466/files/histoire_luxueuse.png?v=1772636772",
+        "areaServed": [
+          {
+            "@type": "AdministrativeArea",
+            "name": "Seine-et-Marne",
+            "identifier": "77",
+            "containedInPlace": {"@type": "State", "name": "Île-de-France"}
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Yonne",
+            "identifier": "89",
+            "containedInPlace": {"@type": "State", "name": "Bourgogne-Franche-Comté"}
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Côte-d'Or",
+            "identifier": "21",
+            "containedInPlace": {"@type": "State", "name": "Bourgogne-Franche-Comté"}
+          }
+        ],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Services d'expertise et d'achat d'antiquités",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Expertise et évaluation d'objets anciens",
+                "description": "Estimation gratuite et confidentielle de vos antiquités, tableaux, argenterie, horlogerie et mobilier ancien."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Achat d'objets de succession",
+                "description": "Rachat direct et immédiat de biens issus de successions, vides maison et héritages en Seine-et-Marne, Yonne et Côte-d'Or."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Intervention à domicile en 77, 89 et 21",
+                "description": "Déplacement à domicile gratuit pour expertiser et acquérir vos objets en Seine-et-Marne (77), Yonne (89) et Côte-d'Or (21)."
+              }
+            }
+          ]
+        },
+        "founder": {
+          "@type": "Person",
+          "name": "Lucien Lombard",
+          "jobTitle": "Expert en antiquités"
+        },
+        "foundingDate": "2023",
+        "priceRange": "€€",
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+          "opens": "09:00",
+          "closes": "18:00"
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "5",
+          "reviewCount": "4",
+          "bestRating": "5"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Intervenez-vous en Seine-et-Marne, dans l'Yonne et en Côte-d'Or ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Oui, Maison Lombard intervient à domicile dans les départements 77 (Seine-et-Marne), 89 (Yonne) et 21 (Côte-d'Or). Le déplacement est entièrement gratuit et sans engagement."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Quels objets achetez-vous ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Nous achetons l'horlogerie ancienne, les montres de collection, l'argenterie, les œuvres d'art (tableaux, sculptures), le mobilier ancien, la maroquinerie de luxe (Hermès, Vuitton, Chanel), la fourrure et les pièces de monnaie."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "L'estimation est-elle vraiment gratuite ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Oui, l'estimation est totalement gratuite et sans engagement. Nous nous déplaçons chez vous sans frais. Aucune obligation de vendre."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Comment se déroule une intervention à domicile pour une succession ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Vous nous contactez par téléphone ou via le formulaire. Nous fixons un rendez-vous à votre domicile. Notre expert examine vos objets, les évalue et vous remet une offre d'achat immédiate. En cas d'accord, le paiement intervient le jour même."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Rachetez-vous des objets issus de successions et vides maison ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Oui, c'est l'un de nos services principaux. Nous accompagnons les familles lors de successions, vides maison et héritages en Seine-et-Marne, Yonne et Côte-d'Or. Nous pouvons reprendre l'intégralité du contenu ou sélectionner certaines pièces."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Combien de temps après le contact intervenez-vous ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Nous intervenons généralement sous 48 à 72 heures. Pour les situations urgentes (succession, vide maison), nous pouvons nous déplacer sous 24 heures sur demande."
+            }
+          }
+        ]
+      }
+    ]
   }
   </script>
 </head>
@@ -1617,13 +1799,14 @@
       <div class="hero-line l2"></div>
 
       <div class="hero-content">
-        <div class="hero-badge">Expertise à domicile · Partout en France</div>
+        <div class="hero-badge">Expert antiquités · Seine-et-Marne · Yonne · Côte-d'Or</div>
         <h1 class="hero-title">
           Vos objets ont une<br><em>histoire</em>
         </h1>
         <p class="hero-subtitle">
-          Spécialisés dans l'expertise et l'achat d'objets de valeur, nous estimons
-          et acquérons vos biens en toute confidentialité, directement chez vous.
+          Experts en antiquités et objets de succession, nous intervenons à domicile
+          en Seine-et-Marne (77), dans l'Yonne (89) et en Côte-d'Or (21).
+          Estimation gratuite et confidentielle.
         </p>
         <div class="hero-buttons">
           <a href="#contact" class="btn btn-gold btn-arrow">Estimation Gratuite</a>
@@ -1658,9 +1841,10 @@
               redonner ses lettres de noblesse au métier d'antiquaire.
             </p>
             <p class="histoire-text reveal reveal-delay-3">
-              Autodidacte rigoureux, il commence seul, en sillonnant les campagnes françaises
-              à la recherche de pièces oubliées. Très vite, sa réputation d'expertise, d'honnêteté
-              et de raffinement lui vaut la confiance de nombreuses familles, collectionneurs et professionnels.
+              Autodidacte rigoureux, il commence seul, en sillonnant les campagnes de Seine-et-Marne,
+              de l'Yonne et de la Côte-d'Or à la recherche de pièces oubliées. Très vite, sa réputation
+              d'expertise, d'honnêteté et de raffinement lui vaut la confiance de nombreuses familles,
+              collectionneurs et notaires de la région.
             </p>
             <div class="histoire-founder reveal reveal-delay-4">
               <div class="histoire-founder-avatar">LL</div>
@@ -1724,8 +1908,9 @@
               </svg>
             </div>
             <h3>Intervention à Domicile</h3>
-            <p>Nous intervenons directement chez vous, partout en France,
-              pour expertiser et acquérir vos biens en toute simplicité.</p>
+            <p>Nous intervenons à domicile en <strong>Seine-et-Marne (77)</strong>,
+              dans l'<strong>Yonne (89)</strong> et en <strong>Côte-d'Or (21)</strong>
+              pour expertiser et acquérir vos biens en toute confidentialité.</p>
           </div>
         </div>
       </div>
@@ -1862,6 +2047,78 @@
     </section>
 
     <!-- ════════════════════════════════════════
+       FAQ
+  ════════════════════════════════════════ -->
+    <section class="faq-section" id="faq">
+      <div class="container">
+        <div class="faq-header">
+          <div class="section-label reveal">Questions fréquentes</div>
+          <h2 class="section-title reveal reveal-delay-1">Tout savoir sur notre <em>service</em></h2>
+          <p class="section-subtitle reveal reveal-delay-2">
+            Vous intervenez en Seine-et-Marne, dans l'Yonne ou en Côte-d'Or ?
+            Retrouvez les réponses aux questions les plus posées.
+          </p>
+        </div>
+        <div class="faq-grid">
+          <div class="faq-item reveal">
+            <button class="faq-question" aria-expanded="false">
+              <span>Intervenez-vous en Seine-et-Marne, dans l'Yonne et en Côte-d'Or ?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Oui, Maison Lombard intervient à domicile dans les départements <strong>77 (Seine-et-Marne)</strong>, <strong>89 (Yonne)</strong> et <strong>21 (Côte-d'Or)</strong>. Le déplacement est entièrement gratuit et sans engagement de votre part.</p>
+            </div>
+          </div>
+          <div class="faq-item reveal reveal-delay-1">
+            <button class="faq-question" aria-expanded="false">
+              <span>Quels objets achetez-vous ?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Nous achetons l'horlogerie ancienne, les montres de collection, l'argenterie, les œuvres d'art (tableaux, sculptures), le mobilier et la décoration anciens, la maroquinerie de luxe (Hermès, Vuitton, Chanel), les fourrures et les pièces de monnaie.</p>
+            </div>
+          </div>
+          <div class="faq-item reveal reveal-delay-2">
+            <button class="faq-question" aria-expanded="false">
+              <span>L'estimation est-elle vraiment gratuite ?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Oui, l'estimation est totalement gratuite et sans engagement. Nous nous déplaçons chez vous sans frais, aucune obligation de vendre.</p>
+            </div>
+          </div>
+          <div class="faq-item reveal reveal-delay-3">
+            <button class="faq-question" aria-expanded="false">
+              <span>Comment se déroule une intervention pour une succession ?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Vous nous contactez par téléphone ou via le formulaire. Nous fixons un rendez-vous à votre domicile. Notre expert examine et évalue vos objets, puis vous remet une offre d'achat immédiate. En cas d'accord, le paiement intervient le jour même.</p>
+            </div>
+          </div>
+          <div class="faq-item reveal reveal-delay-4">
+            <button class="faq-question" aria-expanded="false">
+              <span>Rachetez-vous des objets issus de successions et vides maison ?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Oui, c'est l'un de nos services principaux. Nous accompagnons les familles lors de successions, vides maison et héritages en Seine-et-Marne, Yonne et Côte-d'Or. Nous pouvons reprendre l'intégralité du contenu ou sélectionner certaines pièces.</p>
+            </div>
+          </div>
+          <div class="faq-item reveal reveal-delay-5">
+            <button class="faq-question" aria-expanded="false">
+              <span>Sous quel délai intervenez-vous après le contact ?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Nous intervenons généralement sous <strong>48 à 72 heures</strong>. Pour les situations urgentes (succession, vide maison), nous pouvons nous déplacer sous 24 heures sur demande.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════
        CTA / CONTACT
   ════════════════════════════════════════ -->
     <section class="cta-section" id="contact">
@@ -1873,7 +2130,7 @@
           </h2>
           <p class="section-subtitle reveal reveal-delay-2">
             Contactez-nous pour une estimation gratuite et confidentielle.
-            Nous intervenons à domicile, partout en France.
+            Nous intervenons à domicile en Seine-et-Marne (77), dans l'Yonne (89) et en Côte-d'Or (21).
           </p>
         </div>
 
@@ -1959,8 +2216,8 @@
           <div class="footer-brand">
             <div class="footer-brand-name">Maison Lombard</div>
             <p class="footer-brand-desc">
-              Spécialiste en expertise et achat d'objets de valeur.
-              Intervention à domicile partout en France.
+              Expert en antiquités et objets de succession.
+              Intervention à domicile en Seine-et-Marne, Yonne et Côte-d'Or.
             </p>
           </div>
 
@@ -2080,6 +2337,22 @@
           }
         });
       }
+
+      // ── FAQ accordion ──────────────────────────────────────────────────
+      document.querySelectorAll('.faq-question').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const item = btn.closest('.faq-item');
+          const isOpen = item.classList.contains('open');
+          document.querySelectorAll('.faq-item.open').forEach(i => {
+            i.classList.remove('open');
+            i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+          });
+          if (!isOpen) {
+            item.classList.add('open');
+            btn.setAttribute('aria-expanded', 'true');
+          }
+        });
+      });
     </script>
 
 </body>
