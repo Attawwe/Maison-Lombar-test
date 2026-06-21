@@ -36,7 +36,10 @@
   <meta name="twitter:image" content="https://cdn.shopify.com/s/files/1/0899/6126/7466/files/histoire_luxueuse.png?v=1772636772">
 
   <!-- Favicon -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏛️</text></svg>">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1607,6 +1610,15 @@
   {
     "@context": "https://schema.org",
     "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://maison-lombard.com/#website",
+        "name": "Maison Lombard",
+        "alternateName": "Maison Lombard — Expert Antiquités & Achat Succession",
+        "url": "https://maison-lombard.com/",
+        "inLanguage": "fr-FR",
+        "publisher": { "@id": "https://maison-lombard.com/#business" }
+      },
       {
         "@type": ["LocalBusiness", "ProfessionalService"],
         "@id": "https://maison-lombard.com/#business",
