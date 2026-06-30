@@ -958,12 +958,14 @@
     .expertise-item-bg {
       position: absolute;
       inset: 0;
-      background: linear-gradient(135deg, var(--black-card), var(--black));
-      transition: all 0.5s var(--ease-out);
+      background-color: var(--black-card);
+      background-size: cover;
+      background-position: center;
+      transition: transform 0.6s var(--ease-out);
     }
 
     .expertise-item:hover .expertise-item-bg {
-      background: linear-gradient(135deg, rgba(201, 169, 110, 0.08), var(--black));
+      transform: scale(1.06);
     }
 
     .expertise-item-content {
@@ -974,19 +976,7 @@
       flex-direction: column;
       justify-content: flex-end;
       padding: clamp(16px, 2vw, 24px);
-    }
-
-    .expertise-item-icon {
-      font-size: 2.5rem;
-      margin-bottom: auto;
-      padding-top: 20px;
-      opacity: 0.6;
-      transition: all 0.5s var(--ease-out);
-    }
-
-    .expertise-item:hover .expertise-item-icon {
-      opacity: 1;
-      transform: scale(1.1);
+      background: linear-gradient(to top, rgba(10, 10, 10, 0.92) 0%, rgba(10, 10, 10, 0.5) 45%, rgba(10, 10, 10, 0) 100%);
     }
 
     .expertise-item-name {
@@ -995,6 +985,7 @@
       font-weight: 600;
       color: var(--white);
       margin-bottom: 0.3rem;
+      text-shadow: 0 2px 12px rgba(0, 0, 0, 0.8);
     }
 
     .expertise-item-line {
@@ -1945,54 +1936,48 @@
 
         <div class="expertise-grid">
           <div class="expertise-item reveal">
-            <div class="expertise-item-bg"></div>
+            <div class="expertise-item-bg" style="background-image: url('/images/collections/horlogerie.webp')"></div>
             <div class="expertise-item-content">
-              <div class="expertise-item-icon">⌚</div>
               <span class="expertise-item-name">Horlogerie</span>
               <div class="expertise-item-line"></div>
             </div>
           </div>
 
           <div class="expertise-item reveal reveal-delay-1">
-            <div class="expertise-item-bg"></div>
+            <div class="expertise-item-bg" style="background-image: url('/images/collections/fourrure-maroquinerie.webp')"></div>
             <div class="expertise-item-content">
-              <div class="expertise-item-icon">👜</div>
               <span class="expertise-item-name">Fourrure & Maroquinerie</span>
               <div class="expertise-item-line"></div>
             </div>
           </div>
 
           <div class="expertise-item reveal reveal-delay-2">
-            <div class="expertise-item-bg"></div>
+            <div class="expertise-item-bg" style="background-image: url('/images/collections/argenterie.webp')"></div>
             <div class="expertise-item-content">
-              <div class="expertise-item-icon">🍽️</div>
               <span class="expertise-item-name">Argenterie</span>
               <div class="expertise-item-line"></div>
             </div>
           </div>
 
           <div class="expertise-item reveal reveal-delay-3">
-            <div class="expertise-item-bg"></div>
+            <div class="expertise-item-bg" style="background-image: url('/images/collections/oeuvres-art.webp')"></div>
             <div class="expertise-item-content">
-              <div class="expertise-item-icon">🎨</div>
               <span class="expertise-item-name">Œuvres d'art</span>
               <div class="expertise-item-line"></div>
             </div>
           </div>
 
           <div class="expertise-item reveal reveal-delay-4">
-            <div class="expertise-item-bg"></div>
+            <div class="expertise-item-bg" style="background-image: url('/images/collections/decoration-mobilier.webp')"></div>
             <div class="expertise-item-content">
-              <div class="expertise-item-icon">🏛️</div>
               <span class="expertise-item-name">Décoration & Mobilier</span>
               <div class="expertise-item-line"></div>
             </div>
           </div>
 
           <div class="expertise-item reveal reveal-delay-5">
-            <div class="expertise-item-bg"></div>
+            <div class="expertise-item-bg" style="background-image: url('/images/collections/pieces-monnaie.webp')"></div>
             <div class="expertise-item-content">
-              <div class="expertise-item-icon">🪙</div>
               <span class="expertise-item-name">Pièces de monnaie</span>
               <div class="expertise-item-line"></div>
             </div>
